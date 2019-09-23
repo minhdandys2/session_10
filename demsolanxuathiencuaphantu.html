@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đếm số lần xuất hiện của phần tử</title>
+</head>
+<body>
+    <script>
+        function count(arr , data) {
+            let count = 0 ;
+                 for (let i = 0; i < arr.length;i++) {
+                     if (arr[i] === data) {
+                         count += 1;
+                    }
+                 }
+            return count;
+        }
+
+        let num = [];
+        for (let i = 0;i<100;i++) {
+            num[i] = Math.floor(Math.random()*101);
+            document.write(num[i] +",  ");
+        }
+
+        let data = parseInt(prompt("nhap so can tim"));
+        let search = count(num,data);
+        document.write("<br>so lan xuat hien so "+data+" la: "+ search+" lan.")
+    </script>
+</body>
+</html>
