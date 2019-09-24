@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra số điện thoại</title>
+</head>
+<body>
+<script>
+    function CheckPhoneNumber() {
+        let regex = /^03[2-9][0-9]{7}$|086[0-9]{7}$|09[678][0-9]{7}$/;
+        let phoneNumber=prompt("Nhập Số Điện Thoại:");
+        if (regex.test(phoneNumber)) {
+            alert("Đây Là Số Nhà Mạng Viettel 🙂")
+        } else {
+            alert("Đây Không Phải Số Viettel 😞")
+        }
+    }
+    CheckPhoneNumber();
+</script>
+</body>
+</html>
