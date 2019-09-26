@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tuyến tính</h1>
+<div id="result1"></div>
+<h1>Nhị phân</h1>
+<div id="result2"></div>
+<script>
+    let nums = [1, 25, 50, 75, 82, 100];
+    let num = parseInt(prompt("Mời bạn đoán số:"));
+    function linearSearch(arr) {
+        for (let i = 0; i<arr.length;i++) {
+            if (num === arr[i]) {
+                document.getElementById("result1").innerHTML = "Tìm kiếm tuyến tính: Bạn đoán đúng!";
+                break;
+            } else {
+                document.getElementById("result1").innerHTML = "Tìm kiếm tuyến tính: Bạn đoán sai!";
+            }
+        }
+    }
+    function binarySearch(arr) {
+        if (num === arr[parseInt(arr.length/2)]) {
+            document.getElementById("result2").innerHTML = "Tìm kiếm nhị phân: Bạn đoán đúng!";
+        } else if (num > arr[parseInt(arr.length/2)]) {
+            if (num === arr[parseInt((arr.length/2) + (arr.length/4))]) {
+                document.getElementById("result2").innerHTML = "Tìm kiếm nhị phân: Bạn đoán đúng!";
+            } else if (num > arr[parseInt((arr.length/2) + (arr.length/4))]){
+                if (num === arr[arr.length-1]) {
+                    document.getElementById("result2").innerHTML = "Tìm kiếm nhị phân: Bạn đoán đúng!";
+                } else {document.getElementById("result2").innerHTML = "Tìm kiếm nhị phân: Bạn đoán sai";}
+            } else {document.getElementById("result2").innerHTML = "Tìm kiếm nhị phân: Bạn đoán sai";}
+        } else {
+            if (num === arr[parseInt((arr.length/2) - (arr.length/4))]) {
+                document.getElementById("result2").innerHTML = "Tìm kiếm nhị phân: Bạn đoán đúng";
+            } else if (num > arr[parseInt((arr.length/2) - (arr.length/4))]) {
+                if (num === arr[parseInt((arr.length/2) - (arr.length/6))]) {
+                    document.getElementById("result2").innerHTML = "Tìm kiếm nhị phân: Bạn đoán đúng";
+                } else {document.getElementById("result2").innerHTML = "Tìm kiếm nhị phân: Bạn đoán sai";}
+            } else {
+                if (num === arr[parseInt((arr.length/2) - (arr.length/2))]) {
+                    document.getElementById("result2").innerHTML = "Tìm kiếm nhị phân: Bạn đoán đúng";
+                } else {document.getElementById("result2").innerHTML = "Tìm kiếm nhị phân: Bạn đoán sai";}
+            }
+        }
+    }
+    linearSearch(nums);
+    binarySearch(nums);
+</script>
+</body>
+</html>
