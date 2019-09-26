@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung dung quan li san pham</title>
+</head>
+<body>
+    <h3>Add new product</h3>
+    <div>
+        <input type="text" placeholder="New Product " id="newProduct"><br>
+        <button type="button" onclick="app.add()">Add</button>
+    </div>
+    <h3>Display All Product</h3>
+    <table>
+        <tbody>
+            <tr>
+                <th style="text-align: left">Product Name</th>
+                <th style="text-align: right;color: forestgreen" colspan="2"><p id = counter></p></th>
+            </tr>
+        </tbody>
+        <tbody id="product">
+        </tbody>
+    </table>
+    <div id="spoiler" style="display: none">
+        <h3>Edit Product</h3>
+        <form action="javascript:app" id="saveEdit">
+            <input type="text" id="edit-name">
+            <button type="submit" >Edit</button>
+            <button onclick="closeInput()">&#10006;</button>
+        </form>
+    </div>
+<script src=" UD_quan_li_sp_sd_mang.js"></script>
+</body>
+</html>
